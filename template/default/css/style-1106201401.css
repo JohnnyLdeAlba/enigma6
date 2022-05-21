@@ -1,0 +1,462 @@
+@import url('attribute.css');
+@import url('font.css');
+
+html, body { margin: 0px; padding: 0px; }
+
+html {
+
+    font-family: open-sans-semibold;
+    font-size: 12pt;
+    letter-spacing: 0.1em; }
+
+body {
+
+    background-color: #111118;
+    color: #eeeeee; }
+
+container {
+
+    display: block;
+    margin: 4em auto 4em auto;
+    width: 1024px; }
+
+menu {
+
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.20) 0%,
+        rgba(255, 255, 255, 0.10) 100%);
+    border-color:
+        rgba(255, 255, 255, 0.20)
+        rgba(255, 255, 255, 0.10)
+        rgba(0, 0, 0, 0.60)
+        transparent;
+    border-width: 1px 1px 1px 0px;
+    border-style: solid;
+    color: #cccccc;
+    cursor: pointer;
+    display: block;
+    font-size: 0.6em;
+    font-weight: bold;
+    margin: 0em;
+    padding: 0em;
+    text-shadow: 1px 1px #222222; 
+    text-transform: uppercase; }
+
+    menu > div { padding: 0.5em 2em 0.5em 2em; }
+
+menuItem {
+
+    display: block;
+    float: left;
+    margin: 0em;
+    position: relative;
+    padding: 0.5em 2em 0.5em 2em;
+    transition: background-color 1s; }
+
+    menuItem:hover { background-color: rgba(255, 255, 255, 0.3); }
+    menuItem:hover > ul.menuDropDown { display: block; }
+
+ul.menuDropDown {
+
+    background-color: #202030;
+    border: 1px solid #111111;
+    box-shadow:
+        1px 1px 0px 0px
+        rgba(255, 255, 255, 0.20)
+        inset;
+    display: none;
+    font-size: 1.1em;
+    list-style: none; 
+    padding: 1px 0px 0px 1px;
+    position: absolute;
+    margin: 3.8px 0em 0em -21.2px;
+    width: 25em;
+    z-index: 99999; }
+
+    ul.menuDropDown > li {
+
+        background-color: rgba(255, 255, 255, 0.10);
+        border-color:
+            rgba(255, 255, 255, 0.10)
+            transparent
+            rgba(0, 0, 0, 0.60)
+            transparent;
+        border-style: solid;
+        border-width: 1px 0px 1px 0px;
+        display: block;
+        margin: 0em;
+        padding: 0.5em 1em 0.5em 1em;
+        text-transform: none; }
+
+        ul.menuDropDown > li:first-child {
+
+            border: 1px solid rgba(0, 0, 0, 0.60);
+            border-width: 0px 0px 1px 0px; }
+
+        ul.menuDropDown > li:hover { background-color: rgba(255, 255, 255, 0.20); }
+
+        ul.menuDropDown > li:last-child {
+
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-width: 1px 0px 0px 0px; }
+
+panel {
+
+    background-color: #202030;
+    border: 1px solid #111111;
+    border-radius: 3px;
+    display: block; }
+
+panelBody {
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-width: 1px 0px 0px 0px;
+    display: block; 
+    overflow: auto;
+    padding: 0em; }
+
+panelCategory {
+
+    background-color: rgba(82, 82, 98, 1);
+    color: #cccccc;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 0em; 
+    padding: 0.5em; 
+    text-shadow: 1px 1px #111111; 
+    text-transform: capitalize; }
+
+columnTable, panelTable {
+
+    display: block;
+    overflow: auto; }
+
+    columnTable {  background-color: rgba(62, 62, 78, 1); }
+
+column {
+
+    display: block;
+    float: left;
+    overflow: auto; }
+
+article,
+articleRow {
+
+    display: block;
+    font-size: 0.8em;
+    overflow: auto;
+    padding: 1em; }
+
+    article > category,
+    articleBody > category {
+
+        border: 1px solid #ff6644;
+        border-width: 0px 0px 1px 0px;
+        color: #ff6644;
+        display: block;
+        font-weight: bold;
+        margin: 0em 0em 0.5em 0em;
+        padding: 0em 0em 0.5em 0em;
+        text-shadow: 1px 1px #111111; 
+        text-transform: uppercase; }
+
+    article > img {
+
+        display: block;
+        height: auto;
+        margin: 0em -2px 0.5em -2px;
+        padding: 0px;
+        width: 100%; }
+
+articleAuthor {
+
+    display: block;
+    font-size: 0.9em;
+    margin: 0em 0em 1em 0em;
+    overflow: auto;
+    padding: 1em 0em 0em 0em; }
+
+    articleAuthor > img {
+
+        border: 1px solid rgba(0, 0, 0, 0.60);
+        box-shadow: 
+            8px 8px 0px 0px
+            rgba(0, 0, 0, 0.30);
+        display: block;
+        float: left;
+        height: 32px;
+        margin: 0px 16px 8px 0px;
+        width: 32px; }
+
+articleBody {
+
+    display: block;
+    height: 14em;
+    overflow: hidden; }
+
+    articleBody > articleAuthor { padding: 0em; }
+    articleBody > articleHeadline { font-size: 1.1em; }
+    articleBody > category { text-align: right;  }
+
+articleHeadline {
+
+    color: #ffaa44;
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin: 0em 0em 0.5em 0em;
+    padding-top: 0.5em;
+    text-shadow: 1px 1px #111111; }
+
+articleFooter {
+
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(62, 62, 78, 0) 0%,
+        rgba(62, 62, 78, 1) 100%);
+    display: block;
+    height: 4em;
+    margin-top: -4em;
+    position: relative; }
+
+articleImage > img {
+    display: block;
+    height: auto;
+    margin-left: -75%;
+    width: 250%; }
+
+articleRow {}
+
+    articleRow:nth-child(even) { background-color: rgba(62, 62, 78, 1); }
+    articleRow:nth-child(even) > articleFooter {
+
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(62, 62, 78, 0) 0%,
+            rgba(62, 62, 78, 1) 100%); }
+
+    articleRow:nth-child(odd) { background-color: rgba(82, 82, 98, 1); }
+    articleRow:nth-child(odd) > articleFooter {
+
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(82, 82, 98, 0) 0%,
+            rgba(82, 82, 98, 1) 100%); }
+
+    articleRow > articleBody { height: 22em; margin-left: 30%; }
+    articleRow > articleImage {
+
+        display: block;
+        float: left;
+        height: auto;
+        margin: 0em 1em 0em 0em;
+        overflow: hidden;
+        position: relative;
+        width: 30%; }
+
+    articleRow > div {
+
+        border-color:
+            rgba(0, 0, 0, 0.60)
+            transparent
+            rgba(255, 255, 255, 0.10)
+            transparent;
+        border-style: solid;
+        border-width: 1px 0px 1px 0px;
+        height: 0px;
+        margin-top: 1em; }
+
+    articleRow > articleFooter { margin-left: 30%; }
+
+articleStats {
+
+    display: block;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0em 0em 0.5em 0em;
+    text-align: right; }
+
+    articleStats > div { float: left; }
+
+
+button {
+
+    background-color: #222222; 
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.40) 0%,
+        rgba(255, 255, 255, 0.10) 100%);
+
+    border: 1px solid rgba(0, 0, 0, 0.80);
+    border-radius: 3px;
+
+    box-shadow: 
+        0px 1px 0px 0px
+        rgba(255, 255, 255, 0.40)
+        inset;
+
+    color: rgba(255, 255, 255, 0.90); 
+    display: block;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 0.5em 1em 0.6em 1em;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.40); 
+    width: 8em; }
+
+    button:active { 
+
+        box-shadow: 
+            0px 0px 8px 4px
+            rgba(0, 0, 0, 0.05) 
+            inset; }
+
+    button:focus { outline: none; }
+
+    button:hover {
+
+        background-image: linear-gradient(
+            to bottom, 
+            rgba(255, 255, 255, 0.45) 0%,
+            rgba(255, 255, 255, 0.15) 100%); }
+
+
+header { 
+ 
+    background-color: #000000;
+    display: block;
+    height: auto;
+    overflow: hidden; }
+
+    header uContainer {
+
+        display: block;
+        height: 480px;
+        margin: 0em auto 0em auto;
+        padding: 0em;
+        width: 1280px; }
+
+    header uBase {
+
+        display: block;
+        float: left;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 60%; }
+
+        header uBase > uBody {
+
+            background-color: rgba(42, 42, 58, 0.40);
+            border-color: rgba(82, 82, 98, 1);
+            border-width: 0px 1px 1px 0px;
+            border-style: solid;
+            display: block;
+            height: 100%;
+            margin-left: -1px;
+            position: absolute;
+            top: 0%;
+            width: 100%; }
+
+    header uColumn1,
+    header uColumn2 {
+
+        display: block;
+        clear: right;
+        float: left;
+        height: 50%;
+        overflow: hidden;
+        position: relative;
+        width: 40%; } 
+
+        header uColumn1 > uBody,
+        header uColumn2 > uBody {
+
+            background-color: rgba(42, 42, 58, 0.40);
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            width: 100%; }
+
+        header uColumn1 > uBody {
+
+            border-color: rgba(82, 82, 98, 1);
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            margin-top: -1px; }
+
+    header uContainer {
+
+        display: block;
+        height: 480px;
+        margin: 0em auto 0em auto;
+        padding: 0em;
+        position: relative;
+        width: 1280px; }
+
+    header uForeground {
+
+        background-image: linear-gradient(
+            to right, 
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 15%,
+        rgba(0, 0, 0, 0) 85%,
+        rgba(0, 0, 0, 1) 100%);
+
+        display: block; 
+        height: 100%;
+        position: absolute;
+        top: 0%;
+        width: 100%; }
+
+    header uBase > img,
+    header uColumn1 > img,
+    header uColumn2 > img  {
+
+        display: block;
+        height: 125%;
+        width: auto; }
+
+
+subPanel {
+
+    background-color: #222222;
+    background-image: linear-gradient(
+        to right, 
+        rgba(255, 255, 255, 0.10) 0%,
+        rgba(255, 255, 255, 0.30) 50%,
+        rgba(255, 255, 255, 0.10) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.80);
+    border-radius: 3px;
+    box-shadow: 
+        0px 1px 0px 0px
+        rgba(255, 255, 255, 0.40)
+        inset;
+    display: block;
+    font-size: 0.8em;
+    margin: 0.8em; }
+
+    subPanel::before {
+
+        content: attr(title);
+        border: 1px solid rgba(0, 0, 0, 0.80);
+        border-width: 0px 0px 1px 0px;
+        color: rgba(255, 255, 255, 0.90);
+        display: block;
+        font-weight: bold; 
+        margin: 0em 1.25em 0em 1.25em;
+        padding: 0.5em 0em 0.6em 0em;
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.40); 
+        text-transform: capitalize; }
+
+    subPanel > content {
+
+        box-shadow: 
+            0px 1px 0px 0px
+            rgba(255, 255, 255, 0.20)
+            inset;
+        display: block;
+        margin: 0em 1.25em 0em 1.25em; 
+        padding: 0.5em 0em 0.5em 0em; }

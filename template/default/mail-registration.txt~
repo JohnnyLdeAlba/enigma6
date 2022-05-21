@@ -1,0 +1,46 @@
+ __     ______ _     _           _ _           _ /rn
+ \ \   / / ___| |   (_)_ __ ___ (_) |_ ___  __| |/rn
+  \ \ / / |  _| |   | | '_ ` _ \| | __/ _ \/ _` |/rn
+   \ V /| |_| | |___| | | | | | | | ||  __/ (_| |/rn
+    \_/  \____|_____|_|_| |_| |_|_|\__\___|\__,_|/rn
+                                                 /rn/rn
+
+Dear %username,
+/rn/rn
+Welcome to %website_name!
+/rn/rn
+Your new account has been created, please follow the directions below. 
+An account allows you to interact with different features of the website. 
+Every user is required to create a new account.
+/rn/rn
+Did you know you can use Facebook or Twitter to login to your account? 
+You can link your new account to your preferred social network of choice.
+/rn/rn
+
+{activation_key}
+Activation URL: <a href='%server_uri/activation?uid=%uid&key=%activation_key'>%server_uri/activation?uid=%uid&key=%activation_key</a>
+/rn
+Activation URL (Copy and Paste): %server_uri/activation?uid=%uid&key=%activation_key
+/rn/rn
+Please click on the "Activation URL", you will be directed to a page where you will be asked to enter a new password.
+/rn
+You can optionally copy and paste the Activation URL into your browsers address bar.
+{/activation_key}
+
+{generate_password}
+Username: %username
+/rn
+Password: %password
+/rn/rn
+Login URL: <a href='%server_uri/login'>%server_uri/login</a>
+/rn
+Login URL (Copy and Paste): %server_uri/login
+/rn/rn
+A new password has been randomly generated for you so that you can login. 
+Please update this password as soon as possible.
+{/generate_password} 
+
+/rn/rn
+Thank you,
+/rn
+The %website_name Team

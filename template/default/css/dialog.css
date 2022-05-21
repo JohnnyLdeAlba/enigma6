@@ -1,0 +1,196 @@
+button {
+
+    background-color: #00000c; 
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(255, 255, 255, 0.40) 0%,
+        rgba(255, 255, 255, 0) 100%);
+
+    border: 1px solid #000000;
+    border-radius: 3px;
+
+    box-shadow: 
+         0px 1px 0px 0px
+        rgba(255, 255, 255, 0.40)
+        inset;
+
+    color: #eeeeee; 
+    display: block;
+    float: right;
+    font-weight: bold;
+    font-size: 0.7em;
+    padding: 0.5em 2em 0.6em 2em;
+    text-shadow: 0em 1px #000000;
+    text-transform: capitalize; }
+
+    button:active, button:disabled { 
+
+        box-shadow: 
+            0px 0px 8px 4px
+            rgba(0, 0, 0, 0.1) 
+            inset; }
+
+    button:disabled { color: #aaaaaa; }
+    button:focus { outline: none; }
+
+
+input[type='password'],
+input[type='text'] {
+
+    background-color: #dddddd;
+    border: 1px solid #888888;
+    border-radius: 2px;
+    color: #222222;
+    display: block;
+    float: right;
+    font-family: open-sans;
+    font-size: 0.8em;
+    margin: 0em;
+    padding: 0.5em;
+    width: 80%; }
+
+input[type='password']:focus,
+input[type='text']:focus { outline: none; }
+
+input[type='checkbox'] { display: none; }
+input[type='checkbox'] + label {
+
+    background:
+        url('../misc/checkbox-unchecked.png')
+        left top no-repeat;
+    padding-left: 2em;
+    font-weight: normal; }
+
+input[type='checkbox']:checked + label {
+
+    background:
+        url('../misc/checkbox-checked.png')
+        left top no-repeat; }
+
+label {
+
+    font-size: 0.8em;
+    font-weight: normal; }
+
+uDialog {
+
+    display: block;
+    height: auto;
+    margin: 4em auto 0em auto;
+    opacity: 0;
+    overflow: auto; 
+    padding: 0em;
+    width: 640px;
+    transition: opacity 1s; }
+
+    dialog-body > h1 {
+  
+        font-size: 1em; 
+        font-weight: bold;
+        margin: 0em 0em 0.5em 0em;
+        padding: 0em;  }
+
+    dialog-body > h2 {
+  
+        border: 1px solid #222222;
+        border-width: 0px 0px 1px 0px;
+        font-size: 0.9em; 
+        font-weight: bold;
+        margin: 0em 0em 0.5em 0em;
+        padding: 0em 0em 0.5em 0em; }
+
+    dialog-body > p {
+
+        font-size: 0.8em;
+        margin: 0em 0em 1em 0em;
+        padding: 0em; }
+
+    dialog-body {
+
+        background-color: #cccccc;
+        color: #222222;
+        display: block;
+        margin: 0em;
+        padding: 1.5em 1.5em 1em 1.5em; }
+
+        dialog-body button { background-color: #220044; }
+
+    dialog-header,
+    dialog-footer {
+
+        background-color: #11111c;
+        border: 1px solid #000000;
+        border-width: 0px 0px 4px 0px;
+        display: block;
+        overflow: auto;
+        margin: 0em;
+        padding: 1.5em; }
+
+    dialog-footer > button { margin-left: 1em; }
+
+    dialog-table {
+
+        display: block;
+        margin: 1em 3em 0em 3em;
+        overflow: auto; }
+
+        dialog-column {
+
+            display: block;
+            float: left;
+            margin-bottom: 1em;
+            overflow: auto;
+            width: 50%; }
+
+        dialog-column > span {
+
+            font-size: 0.8em;
+            font-weight: bold; }
+
+uAlert, uNotice {
+
+    display: block;
+    border-radius: 2px;
+    box-shadow: 
+         1px 1px 2px 0px #000000;
+    margin: 1em 0em 1em 0em;
+    overflow: auto;
+    padding: 0.5em 0.5em 0.5em 4em; }
+
+    uAlert > span, uNotice > span {
+
+        font-size: 0.8em;
+        white-space: pre-line; }
+
+    alert-image, notice_image {
+
+        display: block;
+        float: left;
+        height: 100%;
+        margin-left: -3em;
+        min-height: 32px;
+        width: 32px; }
+
+uAlert {
+
+    background-color: #cc9999;
+    border: 2px solid #774444; }
+
+    uAlert > span { color: #663333; }
+    alert-image {
+
+        background:
+            url('../misc/warning.png')
+            no-repeat left top; }
+
+uNotice {
+
+    background-color: #8888aa;
+    border: 2px solid #444466; }
+
+    uNotice > span { color: #333355; }
+    notice-image {
+
+        background:
+            url('../misc/important.png')
+            no-repeat left top; }

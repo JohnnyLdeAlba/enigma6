@@ -1,0 +1,61 @@
+
+*[uAlign='center'] { text-align: center; }
+*[uAlign='left'] { text-align: left; }
+*[uAlign='right'] { text-align: right; }
+
+*[uBorder='bottom'] {
+
+    border: 1px solid rgba(0, 0, 0, 0.60);
+    border-width: 0px 0px 1px 0px; }
+
+*[uBorder='left'] {
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-width: 0px 0px 0px 1px; }
+
+*[uBorder='right'] {
+
+    border: 1px solid rgba(0, 0, 0, 0.60);
+    border-width: 0px 1px 0px 0px; }
+
+*[uBorder='top'] {
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-width: 1px 0px 0px 0px; }
+
+*[uBorder='bottom right'] {
+
+    border-color:
+        transparent
+        rgba(0, 0, 0, 0.60)
+        rgba(0, 0, 0, 0.60)
+        transparent;
+    border-style: solid;
+    border-width: 0px 1px 1px 0px; }
+
+*[uBorder='bottom top'] {
+
+    border-color:
+        rgba(255, 255, 255, 0.10)
+        transparent
+        rgba(0, 0, 0, 0.60)
+        transparent;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px; }
+
+*[uBorder='left right'] {
+
+    border-color:
+        transparent 
+        rgba(0, 0, 0, 0.60)
+        transparent
+        rgba(255, 255, 255, 0.10);
+    border-style: solid;
+    border-width: 0px 1px 0px 1px; }
+
+*[uFloat='right'] { float: right; }
+
+*[uWidth='1/2'] { width: calc(100%*1/2); }
+*[uWidth='1/3'] { width: calc(100%*1/3); }
+*[uWidth='2/3'] { width: calc(100%*2/3); }
+

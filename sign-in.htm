@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang='en-US'>
+<head>
+    <meta charset='UTF-8'>
+    <title></title>
+
+    <link rel='stylesheet' type='text/css' media='all'
+        href='template/default/css/style.css'/>
+
+</head>
+<body>
+<background>
+
+<uDialog
+    ng-app='EnigmaModule',
+    ng-controller='SignInController'
+    ng-class='{fadeIn: dialogInstance.fadeIn, fadeOut: !dialogInstance.fadeIn}'>
+
+<form>
+    <dialog-header><img src='template/default/misc/title.png' /></dialog-header>
+    <dialog-body>
+        <h1>Welcome, Please Sign In</h1>
+        <p>
+            If you have a VGLimited account, you can sign in by filling out
+            the form below with your account credentials.
+        </p>
+        <p>
+            Don't have a VGLimited acount? You can sign up for one by clicking
+            'Register For An Account'.
+        </p>
+
+        <uAlert ng-show='dialogInstance.alertShow'>
+            <alert-image></alert-image>
+            <span>{{dialogInstance.alertBody}}</span>
+        </uAlert>
+
+        <uNotice ng-show='false'>
+            <notice-image></notice-image>
+            {{signInInstance.noticeBody}}
+        </uNotice>
+ 
+        <dialog-table>
+            <dialog-column><span>Username</span></dialog-column>
+            <dialog-column>
+                <input type='text' ng-model='signInInstance.username' />
+            </dialog-column>
+
+            <dialog-column><span>Password</span></dialog-column>
+            <dialog-column>
+                <input type='password' ng-model='signInInstance.password' />
+            </dialog-column>
+
+            <dialog-column>
+                <input id='persistent' type='checkbox' ng-model='signInInstance.persistent'>
+                <label for='persistent'>Remember Me</label>
+            </dialog-column>
+            <dialog-column><button ng-click='button_signIn_onClick()'>sign in</button></dialog-column>
+        </dialog-table>
+    </dialog-body>
+    <dialog-footer>
+        <button ng-click="redirect('index.htm')">cancel</button>
+        <button ng-click="redirect('register.htm')">register for an account</button>
+    </dialog-footer>
+</form>
+</uDialog>
+
+</background>
+</body>
+
+    <script type='text/javascript' src='js/angular.js'></script>
+    <script type='text/javascript' src='js/JournalService.js'></script>
+    <script type='text/javascript' src='js/IOLibrary.js'></script>
+    <script type='text/javascript' src='js/UserController.js'></script>
+    <script type='text/javascript' src='sign-in.js'></script>
+
+</html>

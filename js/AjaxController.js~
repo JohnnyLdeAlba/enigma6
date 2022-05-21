@@ -1,0 +1,123 @@
+function AjaxInterface() {
+
+    this.controller = null;
+
+    this.journalEntry = null;
+    this.responceData = null;
+    this.transferCurrent = 0;
+    this.transferTotal = 0;
+
+    this.httpRequest = null;
+
+    return; }
+
+function ajax_transfer_complete(event) {
+
+    var ajaxInstance = component_get('ajaxInstance');
+
+    journal_entry_set(
+        ajaxInstance.journalEntry,
+        1, 'AJAX_TRANSFER_COMPLETE'); 
+
+    if (this.readyState == 4)
+    if (this.status == 200) {
+
+        alert(this.responce);
+        console.log('success'); }
+
+      // ajaxInstance.responceData = this.responseText;
+      // ajaxInstance.controller();
+
+    return; }
+
+function ajax_transfer_failed(event) {
+
+    var ajaxInstance = component_get('ajaxInstance');
+
+    journal_entry_set(
+        ajaxInstance.journalEntry,
+        -2, 'AJAX_TRANSFER_FAILED'); 
+
+    // ajaxInstance.controller();
+    return; }
+
+function ajax_transfer_userAborted(event) {
+
+    var ajaxInstance = component_get('ajaxInstance');
+
+    journal_entry_set(
+        ajaxInstance.journalEntry,
+        -3, 'AJAX_TRANSFER_USERABORTED'); 
+
+    // ajaxInstance.controller();
+    return; }
+
+function ajax_transfer_updateProgress(event) {
+
+    var ajaxInstance = component_get('ajaxInstance');
+
+    if (event.lengthComputable) {
+
+        if (ajaxInstance.transferTotal == 0)
+            ajaxInstance.transferTotal = event.total;
+        
+        ajaxInstance.transferCurrent = event.loaded; }
+
+    else ajaxInstance.transferTotal = -1;  
+
+    // ajaxInstance.controller();
+    return; }
+
+function ajax_initialize(ajaxInstance) {
+
+    var httpRequest = null;
+
+    if (window.XMLHttpRequest && window.FormData)
+        httpRequest = new XMLHttpRequest();
+    else return -1;
+
+    ajaxInstance.journalEntry = new JournalEntry(0, '');
+
+    // httpRequest.addEventListener(
+    //    'abort', ajax_transfer_userAborted, false);
+    // httpRequest.addEventListener(
+    //    'error', ajax_transfer_failed, false);
+    // httpRequest.addEventListener(
+    //    'load', ajax_transfer_complete, false); 
+    // httpRequest.addEventListener(
+    //    'progress', ajax_transfer_updateProgress, false); 
+
+    httpRequest.onload = function() {  
+
+        console.log(httpRequest.responceText);
+
+    return; }
+    ajaxInstance.httpRequest = httpRequest; 
+    return 0; }
+
+function ajax_send(ajaxInstance, method, uri, row) {
+
+    var httpRequest = new XMLHttpRequest;
+    if (httpRequest == null)
+        return -1;
+
+    ajaxInstance.transferCurrent = 0;
+    ajaxInstance.transferTotal = 0;
+    ajaxInstance.transferStatus = 0;
+
+    httpRequest.onreadystatechange = function() {  
+
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+              document.getElementById("debug").innerHTML = httpRequest.responceText;  }
+
+    return httpRequest.responceText; }
+    // var formData = new FormData;
+    // for (var key in row) formData.append(key, row[key]);
+
+    httpRequest.open('POST', 'm_register.py', false);
+    // httpRequest.setRequestHeader(
+    //    'Content-Type',
+    //    'multipart/form-data');
+    httpRequest.send();
+
+    return 0; }
